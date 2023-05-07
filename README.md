@@ -1,3 +1,4 @@
 # Example_config
 
-This can be used as an example custom config for NvChad, this branch is a minimal one. Do check the feature_full branch if you need all the ease in your config.
+Install NvChad then :  
+`git clone --depth 1 https://github.com/alirezafour/myNvChadConfig ~/.config/nvim/lua/custom`  
