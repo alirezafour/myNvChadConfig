@@ -61,8 +61,13 @@ M.mason = {
 M.nvimtree = {
   git = {
     enable = true,
+    ignore = false,
   },
-
+  actions = {
+        open_file = {
+            quit_on_open = true,
+        },
+    },
   renderer = {
     highlight_git = true,
     icons = {

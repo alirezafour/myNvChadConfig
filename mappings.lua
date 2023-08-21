@@ -21,6 +21,16 @@ M.dap = {
   }
 }
 
+M.nvimtree = {
+  plugin = true,
+  n = {
+    ["<leader>e"] = {
+      "<cmd> NvimTreeToggle <CR>",
+      "toggle nvimtree."
+    }
+  }
+}
+
 -- more keybinds!
 
 return M
