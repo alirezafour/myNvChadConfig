@@ -16,6 +16,7 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "cpp",
+    "python",
   },
   indent = {
     enable = true,
@@ -53,7 +54,7 @@ M.mason = {
     "sqlls",
 
     -- python
-    "pylsp"
+    "python-lsp-server",
   },
 }
 
