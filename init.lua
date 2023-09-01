@@ -1,3 +1,6 @@
+require("custom.chadrc")
+require('custom.configs.overrides')
+require 'base46'
 -- local autocmd = vim.api.nvim_create_autocmd
 vim.wo.relativenumber = true
 -- Auto resize panes when resizing nvim window
@@ -25,3 +28,4 @@ vim.opt.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
 vim.opt.shellpipe = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
 vim.opt.shellquote = ''
 vim.opt.shellxquote = ''
+

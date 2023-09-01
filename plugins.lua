@@ -1,10 +1,10 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require("custom/configs/overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
 
   -- Override plugin definition options
-  
+
   -- cpp debuuger
   {
     "jay-babu/mason-nvim-dap.nvim",
@@ -46,22 +46,22 @@ local plugins = {
       end
     end
   },
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      -- format & linting
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-        config = function()
-          require "custom.configs.null-ls"
-        end,
-      },
-    },
-    config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
-    end, -- Override to setup mason-lspconfig
-  },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   dependencies = {
+  --     -- format & linting
+  --     {
+  --       "jose-elias-alvarez/null-ls.nvim",
+  --       config = function()
+  --         require "custom.configs.null-ls"
+  --       end,
+  --     },
+  --   },
+  --   config = function()
+  --     require "plugins.configs.lspconfig"
+  --     require "custom.configs.lspconfig"
+  --   end, -- Override to setup mason-lspconfig
+  -- },
 
   -- override plugin configs
   {
@@ -69,9 +69,32 @@ local plugins = {
     -- opts = overrides.mason
     opts = {
       ensure_installed = {
+        "lua-language-server",
+        "stylua",
+
+        -- web dev stuff
+        "css-lsp",
+        "html-lsp",
+        "typescript-language-server",
+        "deno",
+        "prettier",
+    
+        -- c/cpp stuff
         "clangd",
         "clang-format",
-        "codelldb",
+        "cmake-language-server",
+    
+        -- rust
+        "rust-analyzer",
+
+        -- CI
+        "docker_compose_language_service",
+        "dockerls",
+        "yamlls",
+        "sqlls",
+    
+        -- python
+        "python-lsp-server",
       }
     }
   },
@@ -83,15 +106,15 @@ local plugins = {
     end,
   },
 
-  {
-    "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require "plugins.configs.treesitter"
-      require "custom.configs.treesitter"
-    end,
-    opts = overrides.treesitter,
-    compilers = { "cl", "clang" },
-  },
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   config = function()
+  --     require "plugins.configs.treesitter"
+  --     require "custom.configs.treesitter"
+  --   end,
+  --   opts = overrides.treesitter,
+  --   compilers = { "cl", "clang" },
+  -- },
 
   {
     "nvim-tree/nvim-tree.lua",
